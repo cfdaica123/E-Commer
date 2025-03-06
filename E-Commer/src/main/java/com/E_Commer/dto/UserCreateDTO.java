@@ -9,9 +9,10 @@ import lombok.*;
 @AllArgsConstructor
 public class UserCreateDTO {
     private String username;
+    private String fullName;
     private String avatarUrl;
     private String email;
-    private String password;  // Chỉ dùng khi tạo user
+    private String password;
     private RoleEnum role;
     private String phoneNumber;
 }

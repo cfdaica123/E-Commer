@@ -53,7 +53,7 @@ public class UserController {
         }
     }
 
-    // 3️⃣ Tạo User mới (Đã sửa lỗi)
+    // 3️⃣ Tạo User mới
     @PostMapping
     public ResponseEntity<?> createUser(@RequestBody UserCreateDTO userCreateDTO) {
         if (userCreateDTO.getPassword() == null || userCreateDTO.getPassword().isEmpty()) {

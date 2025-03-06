@@ -3,6 +3,7 @@ package com.E_Commer.service;
 import com.E_Commer.dto.UserDTO;
 import com.E_Commer.dto.UserCreateDTO;
 import com.E_Commer.entity.User;
+import com.E_Commer.enums.RoleEnum;
 import com.E_Commer.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -26,6 +27,7 @@ public class UserService {
         return new UserDTO(
             user.getId(),
             user.getUsername(),
+            user.getFullName(),
             user.getAvatarUrl(),
             user.getEmail(),
             user.getRole(),
@@ -44,9 +46,10 @@ public class UserService {
     public User saveUser(UserCreateDTO userCreateDTO) {
         User user = new User();
         user.setUsername(userCreateDTO.getUsername());
+        user.setFullName(userCreateDTO.getFullName());
         user.setAvatarUrl(userCreateDTO.getAvatarUrl());
         user.setEmail(userCreateDTO.getEmail());
-        user.setRole(userCreateDTO.getRole());
+        user.setRole(userCreateDTO.getRole() != null ? userCreateDTO.getRole() : RoleEnum.CUSTOMER);
         user.setPhoneNumber(userCreateDTO.getPhoneNumber());
 
         // ⚠️ Mã hóa password trước khi lưu
