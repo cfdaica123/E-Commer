@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ECommerApplication<E-Commer>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.E_Commer.ECommerApplication",
+            "projectName": "E-Commer",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
